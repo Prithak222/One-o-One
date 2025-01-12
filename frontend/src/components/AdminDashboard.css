@@ -1,0 +1,430 @@
+/* Dashboard page view container */
+.dashboard-view {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header styling */
+.dashboard-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.dashboard-view-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+}
+
+.current-date-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(245, 239, 230, 0.7);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.text-gold {
+  color: #B08D57;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+/* Sync button */
+.sync-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(176, 141, 87, 0.1);
+  border: 1px solid rgba(176, 141, 87, 0.2);
+  color: #B08D57;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sync-btn:hover {
+  background-color: rgba(176, 141, 87, 0.2);
+  border-color: #B08D57;
+  color: #ffffff;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Error banner */
+.dashboard-error {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+  margin-bottom: 24px;
+}
+
+/* Glassmorphism card template */
+.bg-glass {
+  background: rgba(34, 20, 13, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(176, 141, 87, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Loading state */
+.dashboard-loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  color: rgba(245, 239, 230, 0.6);
+}
+
+.spinner-large {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(176, 141, 87, 0.15);
+  border-top-color: #B08D57;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 16px;
+}
+
+/* Grid Layouts */
+.dashboard-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.metrics-row-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Metric Card designs */
+.metric-icon-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.metric-icon-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(176, 141, 87, 0.2);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.metric-header-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a0f0a;
+  flex-shrink: 0;
+}
+
+/* Gradients for stats badges */
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #F3C68F 0%, #B08D57 100%);
+  box-shadow: 0 4px 14px rgba(176, 141, 87, 0.3);
+}
+
+.bg-blue-gradient {
+  background: linear-gradient(135deg, #7DD3FC 0%, #0284C7 100%);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+}
+
+.bg-green-gradient {
+  background: linear-gradient(135deg, #6EE7B7 0%, #059669 100%);
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+}
+
+.bg-purple-gradient {
+  background: linear-gradient(135deg, #D8B4FE 0%, #7C3AED 100%);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+}
+
+.metric-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-body span {
+  font-size: 0.85rem;
+  color: rgba(245, 239, 230, 0.6);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.metric-body h3 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.card-sub-detail {
+  font-size: 0.8rem;
+  color: rgba(245, 239, 230, 0.4);
+  margin: 0;
+}
+
+/* Today's Gaming Queue Card */
+.today-gaming-section {
+  padding: 28px;
+}
+
+.section-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(176, 141, 87, 0.1);
+  padding-bottom: 16px;
+}
+
+.section-head-row h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.view-all-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #B08D57;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.view-all-link:hover {
+  color: #ffffff;
+}
+
+.view-all-link:hover svg {
+  transform: translateX(3px);
+}
+
+.view-all-link svg {
+  transition: transform 0.2s ease;
+}
+
+/* Empty queues dashboard */
+.dashboard-empty-queue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  color: rgba(245, 239, 230, 0.4);
+  gap: 12px;
+}
+
+.text-muted {
+  color: rgba(245, 239, 230, 0.3);
+}
+
+/* Queue List layout */
+.gaming-queue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.queue-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(176, 141, 87, 0.05);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.queue-item-row:hover {
+  background-color: rgba(176, 141, 87, 0.04);
+  border-color: rgba(176, 141, 87, 0.15);
+}
+
+.queue-item-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar-square {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bg-dark-roast {
+  background-color: rgba(176, 141, 87, 0.1);
+  border: 1px solid rgba(176, 141, 87, 0.15);
+}
+
+.queue-item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.queue-cust-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.queue-cust-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.meta-text {
+  font-size: 0.85rem;
+  color: #B08D57;
+  font-weight: 500;
+}
+
+.meta-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(245, 239, 230, 0.3);
+}
+
+.meta-time-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(245, 239, 230, 0.5);
+  font-size: 0.8rem;
+}
+
+/* Common Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: capitalize;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* Upcoming badge: warm gold/brown */
+.badge-upcoming {
+  background-color: rgba(176, 141, 87, 0.12);
+  border: 1px solid rgba(176, 141, 87, 0.25);
+  color: #E2B880;
+}
+.badge-upcoming .badge-dot {
+  background-color: #B08D57;
+}
+
+/* In Progress badge: neon blue */
+.badge-in-progress {
+  background-color: rgba(2, 132, 199, 0.12);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  color: #7DD3FC;
+}
+.badge-in-progress .badge-dot {
+  background-color: #0284C7;
+}
+
+/* Completed badge: forest green */
+.badge-completed {
+  background-color: rgba(5, 150, 105, 0.12);
+  border: 1px solid rgba(5, 150, 105, 0.25);
+  color: #6EE7B7;
+}
+.badge-completed .badge-dot {
+  background-color: #059669;
+}
+
+/* Cancelled badge: bright red */
+.badge-cancelled {
+  background-color: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+}
+.badge-cancelled .badge-dot {
+  background-color: #ef4444;
+}
+
+/* Pending badge: vivid orange */
+.badge-pending {
+  background-color: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  color: #FDE047;
+}
+.badge-pending .badge-dot {
+  background-color: #f59e0b;
+}
+
+/* Confirmed badge: vibrant green */
+.badge-confirmed {
+  background-color: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #34D399;
+}
+.badge-confirmed .badge-dot {
+  background-color: #10B981;
+}
+
+/* Responsive details */
+@media (max-width: 768px) {
+  .dashboard-view-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
