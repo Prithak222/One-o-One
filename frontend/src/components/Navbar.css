@@ -1,0 +1,115 @@
+/* ─────────────────────────────────────────────
+   SHARED NAVBAR  –  One O One Cafe
+───────────────────────────────────────────── */
+
+.shared-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+  padding: 1.1rem 0;
+  background: transparent;
+  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow  0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shared-nav.nav-dark {
+  background: #2d1a12;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.28);
+}
+
+.shared-nav__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.shared-nav__logo {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #b08d57;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Links */
+.shared-nav__links {
+  display: flex;
+  list-style: none;
+  gap: 2.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.shared-nav__links li {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  transition: color 0.25s;
+  position: relative;
+}
+
+.shared-nav__links li::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #b08d57;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shared-nav__links li:hover::after,
+.shared-nav__links li.active::after {
+  width: 100%;
+}
+
+.shared-nav__links li:hover,
+.shared-nav__links li.active {
+  color: #b08d57;
+}
+
+/* Mobile toggle */
+.shared-nav__toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+/* ── Mobile ───────────────────────────────── */
+@media (max-width: 768px) {
+  .shared-nav__toggle {
+    display: block;
+  }
+
+  .shared-nav__links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #2d1a12;
+    padding: 1.5rem 2rem;
+    gap: 1.25rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+
+  .shared-nav__links.open {
+    display: flex;
+  }
+}
