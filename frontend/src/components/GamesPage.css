@@ -1,0 +1,331 @@
+.games-page {
+  --gaming-bg: #1a0f0a;
+  --gaming-card: #ffffff;
+  --accent-gold: #b08d57;
+  --text-grey: #666;
+  background-color: #fef9f3;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ── HERO SECTION ──────────────────────────── */
+.games-hero {
+  height: 60vh;
+  position: relative;
+  background-image: url('../assets/gaming-hero.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.games-hero .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(26, 15, 10, 0.7), rgba(26, 15, 10, 0.9));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-icon {
+  color: var(--accent-gold);
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 10px rgba(176, 141, 87, 0.4));
+}
+
+.games-hero h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 0 0 1rem;
+  color: white;
+}
+
+.games-hero p {
+  font-size: 1.25rem;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── FEATURES SECTION ──────────────────────── */
+.games-features {
+  padding: 6rem 0;
+}
+
+.feature-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.game-feature-card {
+  background: white;
+  padding: 3.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.game-feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon-wrap {
+  color: var(--accent-gold);
+}
+
+.game-feature-card h3 {
+  font-size: 1.5rem;
+  color: #2d1a12;
+  margin: 0;
+}
+
+.game-feature-card p {
+  color: var(--text-grey);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 400px;
+}
+
+/* ── PRICING SECTION ───────────────────────── */
+.pricing-section {
+  padding: 4rem 0;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 6rem;
+}
+
+.pricing-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.pricing-table {
+  background: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.pricing-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+
+.pricing-row:last-child {
+  border-bottom: none;
+}
+
+.pricing-row:hover {
+  background: #fdfaf5;
+}
+
+.pricing-label {
+  font-weight: 600;
+  color: #2d1a12;
+}
+
+.pricing-value {
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+/* ── FEATURED GAMES ────────────────────────── */
+.featured-games-section {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.featured-games-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 4rem;
+  color: #2d1a12;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.game-card {
+  background: white;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.game-img-wrap {
+  height: 220px;
+  overflow: hidden;
+  background: #2d1a12; /* Fallback */
+}
+
+.game-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.game-card:hover img {
+  transform: scale(1.05);
+}
+
+.game-info {
+  padding: 1.5rem;
+}
+
+.game-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #2d1a12;
+}
+
+.game-info p {
+  font-size: 0.9rem;
+  color: var(--text-grey);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── BOOKING SECTION ───────────────────────── */
+.booking-section {
+  background-color: #1a0f0a;
+  padding: 8rem 0;
+  color: white;
+  text-align: center;
+}
+
+.booking-header h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.booking-header p {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 4rem;
+}
+
+.booking-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 4rem;
+  border-radius: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.booking-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-group label {
+  color: #2d1a12;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--accent-gold);
+}
+
+.confirm-booking-btn {
+  grid-column: span 2;
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.confirm-booking-btn:hover {
+  background-color: #2d1a12;
+  transform: translateY(-2px);
+}
+
+/* ── RESPONSIVE ────────────────────────────── */
+@media (max-width: 1024px) {
+  .feature-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+  .booking-form {
+    grid-template-columns: 1fr;
+  }
+  .confirm-booking-btn {
+    grid-column: span 1;
+  }
+  .booking-container {
+    padding: 2.5rem 1.5rem;
+  }
+  .pricing-row {
+    padding: 1.25rem 1.5rem;
+  }
+}
