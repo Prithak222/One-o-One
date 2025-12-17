@@ -1,0 +1,256 @@
+/* Messages split view */
+.messages-layout-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+  height: calc(100vh - 160px);
+}
+
+.messages-list-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages-inbox-scroller {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+/* Custom Scrollbar for inbox */
+.messages-inbox-scroller::-webkit-scrollbar {
+  width: 6px;
+}
+.messages-inbox-scroller::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+.messages-inbox-scroller::-webkit-scrollbar-thumb {
+  background: rgba(176, 141, 87, 0.2);
+  border-radius: 4px;
+}
+.messages-inbox-scroller::-webkit-scrollbar-thumb:hover {
+  background: rgba(176, 141, 87, 0.4);
+}
+
+/* Inbox list items */
+.inbox-item-row {
+  display: flex;
+  padding: 16px;
+  border-bottom: 1px solid rgba(176, 141, 87, 0.05);
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  margin-bottom: 6px;
+}
+
+.inbox-item-row:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.inbox-item-row.active-item {
+  background-color: rgba(176, 141, 87, 0.08);
+  border: 1px solid rgba(176, 141, 87, 0.15);
+}
+
+.inbox-item-dot-container {
+  width: 16px;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 4px;
+}
+
+.unread-dot-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ef4444;
+}
+
+.inbox-item-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+.inbox-item-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.inbox-sender-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.unread-item .inbox-sender-name {
+  color: #B08D57; /* Gold for unread senders */
+}
+
+.inbox-time {
+  font-size: 0.75rem;
+  color: rgba(245, 239, 230, 0.4);
+}
+
+.inbox-subject {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f5efe6;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.unread-item .inbox-subject {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.inbox-snippet {
+  font-size: 0.8rem;
+  color: rgba(245, 239, 230, 0.55);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.unread-item .inbox-snippet {
+  color: rgba(245, 239, 230, 0.8);
+}
+
+/* Detail Viewer Card styling */
+.message-viewer-card {
+  padding: 32px;
+  overflow-y: auto;
+}
+
+.viewer-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: rgba(245, 239, 230, 0.4);
+  gap: 12px;
+  text-align: center;
+}
+
+.message-viewer-full {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(176, 141, 87, 0.1);
+  padding-bottom: 20px;
+  gap: 16px;
+}
+
+.viewer-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.viewer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.toggle-read-btn {
+  width: auto !important;
+  padding: 0 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toggle-read-btn:hover {
+  background-color: rgba(176, 141, 87, 0.1);
+  border-color: #B08D57;
+  color: #ffffff;
+}
+
+/* Sender strip */
+.sender-profile-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(176, 141, 87, 0.05);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.sender-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(176, 141, 87, 0.1);
+  border: 1px solid rgba(176, 141, 87, 0.2);
+  color: #B08D57;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sender-details h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+}
+
+.sender-contact-methods {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(245, 239, 230, 0.5);
+  font-size: 0.8rem;
+}
+
+.contact-item svg {
+  color: #B08D57;
+}
+
+/* Message content */
+.message-body-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(245, 239, 230, 0.85);
+  white-space: pre-wrap;
+}
+
+/* Responsive elements */
+@media (max-width: 900px) {
+  .messages-layout-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .messages-list-card {
+    height: 300px;
+  }
+  .message-viewer-card {
+    min-height: 350px;
+  }
+}
